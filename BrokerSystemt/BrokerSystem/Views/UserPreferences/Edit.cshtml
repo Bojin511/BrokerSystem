@@ -1,0 +1,27 @@
+﻿@model BrokerSystem.Models.broker_commission_rate
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "UserPreferences"))
+{
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.rate)
+            @Html.ValidationMessageFor(model => model.rate)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

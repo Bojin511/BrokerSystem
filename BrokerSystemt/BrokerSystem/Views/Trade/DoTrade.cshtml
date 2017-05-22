@@ -1,0 +1,62 @@
+﻿@model BrokerSystem.Models.trades
+
+@{
+    ViewBag.Title = "DoTrade";
+}
+
+<h2>Do Trade</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<p><font color="red">@ViewBag.message</font></p>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>trades</legend>
+
+        <div class="editor-label">
+        @Html.Label("Company Name")
+        </div>
+        <div class="editor-field">
+        @Html.DropDownList("companies", "--please select--")
+        </div>
+
+        <div class="editor-label">
+        @Html.Label("Shareholder")
+        </div>
+        <div class="editor-field">
+        @Html.DropDownList("shareholders", "--please select--")
+        </div>
+
+        <div class="editor-label">
+        @Html.Label("Stock Exchange")
+        </div>
+        <div class="editor-field">
+        @Html.DropDownList("stockEx", "--please select--")
+        </div>
+
+        <div class="editor-label">
+        @Html.Label("Transaction Type")
+        </div>
+        <div class="editor-field">
+        @Html.DropDownList("transactionType", "--please select--")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.share_amount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.share_amount)
+            @Html.ValidationMessageFor(model => model.share_amount)
+        </div>
+
+        <p>
+            <input type="submit" value="Trade" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

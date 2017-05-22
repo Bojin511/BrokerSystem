@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Message</h2>
+<h2>Portfolio</h2>
+
+<p>
+    @Html.ActionLink("Register Stock Exchanges", "RegisterStockEx")
+</p>
+
+<table>
+    <tr>
+        <th>
+            Registered Stock Exchange
+        </th>
+     </tr>
+@foreach (var item in ViewBag.stock)
+{
+    <tr>
+        <td>
+        @item.name
+         </td>
+         <td>
+            @Html.ActionLink("Delete", "DeleteStockEx", new { stockExId = item.stock_ex_id })
+        </td>
+    </tr>
+}
+</table>
+<p></p>
+<p></p>
+
+<p>
+    @Html.ActionLink("Register Shareholder", "RegisterShareholder")
+</p>
+<table>
+    <tr>
+        <th>
+            Registered Shareholder
+        </th>
+     </tr>
+@foreach (var item in ViewBag.shareholder)
+{
+    <tr>
+        <td>
+         @item.first_name @item.last_name
+         </td>
+         <td>
+            @Html.ActionLink("Delete", "DeleteFromRegisteredShareholder", new { shareholderID = item.share_holder_id })
+        </td>
+    </tr>
+}
+</table>
+
+
+
+
+

@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "RegisterShareholder";
+}
+
+<h2>Register Shareholder</h2>
+
+@using (Html.BeginForm("AddRegisteredShareholder", "Portfolio"))
+{
+        @Html.DropDownList("shareholderList", "--please select--")
+        <input type="submit" value="Add to list" />
+    }
+

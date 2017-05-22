@@ -1,0 +1,82 @@
+﻿@model IEnumerable<BrokerSystem.Models.CompanyPrice>
+
+@{
+    ViewBag.Title = "CompanyPriceList";
+}
+
+<h2>Current Companies Price</h2>
+
+
+<table>
+    <tr>
+        <th>
+            name
+        </th>
+        <th>
+            city
+        </th>
+        <th>
+            country
+        </th>
+        <th>
+            issued
+        </th>
+        <th>
+            shares_date_start
+        </th>
+        <th>
+            shares_date_end
+        </th>
+        <th>
+            symbol
+        </th>
+        <th>
+            price
+        </th>
+        <th>
+            price_time_start
+        </th>
+        <th>
+            price_time_end
+        </th>
+    </tr>
+
+@foreach (var item in ViewBag.CompaniesPrices)
+{
+    <tr>
+        <td>
+            @item.name
+        </td>
+        <td>
+            @item.city
+        </td>
+        <td>
+            @item.country
+        </td>
+        <td>
+            @item.issued
+        </td>
+        <td>
+            @item.shares_date_start
+        </td>
+        <td>
+            @item.shares_date_end
+        </td>
+        <td>
+            @item.symbol
+        </td>
+        <td>
+            @item.price
+        </td>
+        <td>
+            @item.price_time_start
+        </td>
+        <td>
+            @item.price_time_end
+        </td>
+
+
+    </tr>
+}
+
+</table>

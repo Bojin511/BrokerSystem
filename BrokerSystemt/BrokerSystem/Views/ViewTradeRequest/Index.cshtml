@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BrokerSystem.Models.share_holder_trade_request>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Trade Request</h2>
+
+
+<table>
+    <tr>
+        <th>
+            company
+        </th>
+        <th>
+            share holder
+        </th>
+        <th>
+            stock exchange
+        </th>
+        <th>
+            transaction type
+        </th>
+        <th>
+            share amount
+        </th>
+    </tr>
+
+@foreach (var item in ViewBag.ShareholderRequests)
+{
+    <tr>
+        <td>
+            @item.companyName
+        </td>
+        <td>
+            @item.shareholderName
+        </td>
+        <td>
+            @item.stockEx
+        </td>
+        <td>
+            @item.transactionType
+        </td>
+        <td>
+            @item.shareAmount
+        </td>
+    </tr>
+}
+
+</table>

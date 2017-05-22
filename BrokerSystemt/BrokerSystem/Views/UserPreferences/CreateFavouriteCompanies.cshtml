@@ -1,0 +1,13 @@
+﻿@model BrokerSystem.Models.companies
+@{
+    ViewBag.Title = "CreateFavouriteCompanies";
+}
+<h2>
+    CreateFavouriteCompanies
+</h2>
+
+@using (Html.BeginForm("AddToBrokerFavourite", "UserPreferences"))
+{
+        @Html.DropDownList("companies", "--please select--")
+        <input type="submit" value="Add to list" />
+    }

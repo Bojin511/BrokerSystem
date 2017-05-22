@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "RegisterStockEx";
+}
+
+<h2>Register Stock Exchange</h2>
+
+
+@using (Html.BeginForm("AddToBrokerStockEx", "Portfolio"))
+{
+        @Html.DropDownList("stockExchanges", "--please select--")
+        <input type="submit" value="Add to list" />
+    }
+

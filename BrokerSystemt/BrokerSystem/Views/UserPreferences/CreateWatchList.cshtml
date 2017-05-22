@@ -1,0 +1,13 @@
+﻿@model BrokerSystem.Models.companies
+
+@{
+    ViewBag.Title = "CreateWatchList";
+}
+
+<h2>CreateWatchList</h2>
+
+@using (Html.BeginForm("AddToWatchList", "UserPreferences"))
+{
+        @Html.DropDownList("companiesList", "--please select--")
+        <input type="submit" value="Add to list" />
+    }

@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Message</h2>
+<h2>User Preferences</h2>
+
+<p>
+    @Html.ActionLink("Add Favourite Companies", "CreateFavouriteCompanies")
+</p>
+
+
+<table>
+    <tr>
+        <th>
+            Favourite Companies
+        </th>
+     </tr>
+@foreach (var item in ViewBag.joined)
+{
+    <tr>
+        <td>
+        @item.name
+         </td>
+         <td>
+            @Html.ActionLink("Delete", "DeleteFavouriteCompany", new { companyID = item.company_id })
+        </td>
+    </tr>
+}
+</table>
+
+<p></p>
+<p></p>
+
+<p>
+    @Html.ActionLink("Add Watch List", "createWatchList")
+</p>
+
+<table>
+    <tr>
+        <th>
+            Watch List
+        </th>
+     </tr>
+@foreach (var item in ViewBag.watchList)
+{
+    <tr>
+        <td>
+         @item.name
+         </td>
+         <td>
+            @Html.ActionLink("Delete", "DeleteFromWatchList", new { companyID = item.company_id })
+        </td>
+    </tr>
+}
+</table>
+
+<p></p>
+<p></p>
+
+
+
+<table>
+    <tr>
+        <th>
+            Commission Rate
+        </th>
+     </tr>
+@foreach (var item in ViewBag.commission)
+{
+    <tr>
+        <td>
+        @item
+         </td>
+         <td>
+          @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) 
+         </td>
+    </tr>
+}
+</table>
